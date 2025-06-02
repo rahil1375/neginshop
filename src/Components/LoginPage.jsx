@@ -18,14 +18,15 @@ function LoginPage(){
 
                 <div className="">
                     
-                <input type="button" value={"ثبت نام"} 
+                <input className="btnsign" type="button" value={"ثبت نام"} 
                 onClick={()=>{document.getElementById('waves').classList.remove("fle");toggleShow()}}/>
+                
                 </div>
               
 
                 
               }
-              {isFirstVisible && <input type="button" value={"ورود"} 
+              {isFirstVisible && <input className="btnlog" type="button" value={"ورود"} 
               onClick={()=>{document.getElementById('waves').classList.add("fle");toggleShow()}}/>
               }
               </div>
@@ -34,13 +35,15 @@ function LoginPage(){
             <div id="form1" className="log" style={{zIndex:"0"}} >
                 <span><label htmlFor="">ایمیل</label><input type="email" /></span>
                 <span><label htmlFor="">پسورد</label><input type="password" /></span>
-                <span><button type="submit">ورود</button></span>
+                <span className="spb"><button type="submit">ورود</button></span>
+                <span className="spb-mob btnsign-mobile"><button type="submit" onClick={()=>{document.getElementById("form1").classList.add("hide");document.getElementById("form2").classList.add("show");document.getElementById("form1").classList.toggle("form-flipped")}}>ثبت نام</button></span>
             </div>
             <div id="form2" className="sign" style={{zIndex:"0"}} >
                 <span><label htmlFor="">نام</label><input type="text" /></span>
                 <span><label htmlFor="">ایمیل</label><input type="email" /></span>
                 <span><label htmlFor="">پسورد</label><input type="password" /></span>
-                <span><button type="submit">ثبت نام</button></span>
+                <span className="spb"><button type="submit">ثبت نام</button></span>
+                <span className="spb-mob btnlog-mobile"><button type="submit" onClick={()=>{document.getElementById("form1").classList.remove("hide");document.getElementById("form2").classList.remove("show");document.getElementById("form1").classList.toggle("form-flipped")}}>ورود</button></span>
             </div>
             </div>
        </div>
