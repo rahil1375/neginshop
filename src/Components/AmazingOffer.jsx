@@ -6,11 +6,11 @@ function AmazingOffer() {
     const buttonRight = document.getElementById('slideRight');
     const buttonLeft = document.getElementById('slideLeft');
     function  scrollLeft() {
-        document.getElementById('container').scrollLeft -= 95;
+        document.getElementById('container').scrollLeft -= document.getElementById('slideItm').offsetWidth;
         
       };
       function scrollright () {
-        document.getElementById('container').scrollLeft += 95;
+        document.getElementById('container').scrollLeft += document.getElementById('slideItm').offsetWidth;
       };
     return (
         <div style={{padding:"0 4vw 2vw 4vw",display:"flex",flexDirection:"column"}}>
@@ -24,7 +24,7 @@ function AmazingOffer() {
         <div style={{display:"flex",alignItems:"center"}}>
       <div onClick={scrollLeft} id="slideLeft" style={{cursor:"pointer",textAlign:"center",backgroundColor:"#a566ff",height:"27vw",display:"flex",alignItems:"center",justifyContent:"center"}}><IoIosArrowBack style={{fontSize:"4vw"}}/></div>
     <div id="container" className='amazoffer' >
-      <div className="" style={{position:"relative"}}>
+      <div id='slideItm' className="" style={{position:"relative"}}>
         <img src={img1} style={{position:"absolute",width:"11vw",height:"9.5vw",left:"12.87vw",top:"-2.8vw"}} alt="" />
       
         <p style={{position:"absolute",width:"7vw",height:"2.5vw",borderRadius:"1.5vw 1vw 1vw 1.5vw",left:"15vw",display:"flex",alignItems:"center",justifyContent:"center",direction:"rtl",fontSize:"1.2vw"}}>50%تخفیف</p>
