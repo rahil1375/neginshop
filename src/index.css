@@ -524,12 +524,6 @@ margin: 0;
 }
 
 
-    .log{
-
-    }
-    .sign{
-
-    }
 } 
 
 @media screen and (max-width: 1042px){
@@ -587,13 +581,7 @@ margin: 0;
         /* transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1); */
        display: none;
       }
-      .fle{
-        /* justify-Content: flex-end; */
-        /* transition: all 1s ease-in-out; */
-        /* transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
-        transform: translatey(50%); */
-        
-      }
+    
 }
 
 .hide{

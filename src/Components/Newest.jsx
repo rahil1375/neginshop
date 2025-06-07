@@ -6,11 +6,11 @@ function Newest() {
 const buttonRight = document.getElementById('slideRight');
     const buttonLeft = document.getElementById('slideLeft');
     function  scrollLeft() {
-        document.getElementById('containn').scrollLeft -= 95;
+        document.getElementById('containn').scrollLeft -= document.getElementById('slideItem').offsetWidth-30;
         
       };
       function scrollright () {
-        document.getElementById('containn').scrollLeft += 95;
+        document.getElementById('containn').scrollLeft += document.getElementById('slideItem').offsetWidth+30;
       };
     return (
         <div style={{padding:"0 4vw 2vw 4vw",display:"flex",flexDirection:"column"}}>
@@ -29,7 +29,7 @@ const buttonRight = document.getElementById('slideRight');
       
         <p style={{position:"absolute",width:"7vw",height:"2.5vw",borderRadius:"1.5vw 1vw 1vw 1.5vw",left:"15vw",display:"flex",alignItems:"center",justifyContent:"center",direction:"rtl",fontSize:"1.2vw"}}>50%تخفیف</p>
         
-        <img style={{width:"21vw",height:"21.5vw",margin:"0 1vw 0 1vw",borderRadius:"1vw"}}  src='../src/images/h1.jpg'/>
+        <img id='slideItem' style={{width:"21vw",height:"21.5vw",margin:"0 1vw 0 1vw",borderRadius:"1vw"}}  src='../src/images/h1.jpg'/>
         </div>  
         <div className="" style={{position:"relative"}}>
         <img src={img1} style={{position:"absolute",width:"11vw",height:"9.5vw",left:"12.87vw",top:"-2.8vw"}} alt="" />
