@@ -3,8 +3,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import img1 from'../images/shapetkhf.png'
 function AmazingOffer() {
-    const buttonRight = document.getElementById('slideRight');
-    const buttonLeft = document.getElementById('slideLeft');
+    // const buttonRight = document.getElementById('slideRight');
+    // const buttonLeft = document.getElementById('slideLeft');
     function  scrollLeft() {
         document.getElementById('container').scrollLeft -= document.getElementById('slideItm').offsetWidth;
         

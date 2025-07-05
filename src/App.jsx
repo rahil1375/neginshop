@@ -9,7 +9,7 @@ import Products from "./Components/Products"
 // import Slideshow from "./Components/Slideshow"
 import SlideshowMain from "./Components/SlideshowMain"
 import { BrowserRouter } from 'react-router-dom'
-import LoginPage from "./Components/LoginPage"
+import LogSignPage from "./Components/LogSignPage"
 function App() {
 
   return (
@@ -23,7 +23,7 @@ function App() {
     <Categories/>
     <AmazingOffer/>
     <Newest/></div>}/>
-    <Route path="/login" element={<LoginPage/>}/>
+    <Route path="/login" element={<LogSignPage/>}/>
     </Routes>
      <Footer/>
       
