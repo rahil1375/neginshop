@@ -10,6 +10,8 @@ import Products from "./Components/Products"
 import SlideshowMain from "./Components/SlideshowMain"
 import { BrowserRouter } from 'react-router-dom'
 import LogSignPage from "./Components/LogSignPage"
+import AdminPanel from "./Components/AdminPanel"
+import Dashboard from "./Components/Dashboard"
 function App() {
 
   return (
@@ -24,6 +26,8 @@ function App() {
     <AmazingOffer/>
     <Newest/></div>}/>
     <Route path="/login" element={<LogSignPage/>}/>
+    <Route path="/dashboard" element={<Dashboard/>}/>
+    <Route path="/admin" element={<AdminPanel/>}/>
     </Routes>
      <Footer/>
       

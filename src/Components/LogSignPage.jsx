@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 
-
+import { useNavigate } from "react-router-dom";
 
 
 function LogSignPage(){
 
-    
+    const navigate=useNavigate();
 
     const [isFirstVisible,setIsFirstVisible]=useState(true);
     const [isSecondVisible,setIsSecondVisible]=useState(false);
@@ -30,15 +31,27 @@ function LogSignPage(){
             const data=await res.json();
             if(res.ok){
                 localStorage.setItem("token",data.token);
+                
+                // window.location.href= data.isAdmin ? "/admin" : "/dashboard";
+                //دریافت اطلاعات کاربر
+                const userRes = await fetch('http://localhost:5000/api/auth/me',{
+                    headers: { 'Authorization':`Bearer ${data.token}`}
+                });
+                const userData=await userRes.json();
 
-                // const fakeUser ={
-                //     name: "کاربر تست",
-                //     avatar: "default.png"
-                // };
-                // localStorage.setItem("user",JSON.stringify(fakeUser));
+                if (userData.role === "admin" || userData.isAdmin){
+                    // navigate('/admin');
+                    localStorage.setItem("user",JSON.stringify(userData));
+                    window.location.href="/admin";
+                }else{
+                    // navigate('/dashboard');
+                    localStorage.setItem("user",JSON.stringify(userData));
+                     window.location.href="/dashboard"
+                }
 
-                alert("ورود موفق");
-                window.location.href="/";
+                console.log(userData)
+                // alert("ورود موفق");
+                // window.location.href="/";
             }else{
                 alert(data.message || "ورود ناموفق");
             }}catch(err){

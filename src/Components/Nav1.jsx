@@ -1,10 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef} from "react";
 import { FaSearch } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
 import imgl from '../assets/logo2.png'
 import { data, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Nav1(){
 
+    const[open,setOpen]=useState(false);
+    const navigate=useNavigate();
+    const userr=JSON.parse(localStorage.getItem("user"));
+    const menuRef=useRef();
+    const handleLogout=()=>{
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      navigate('/');
+      window.location.reload();
+    }
+    useEffect(()=>{
+      const handleClickOutside=(event)=>{
+        if(menuRef.current && !menuRef.current.contains(event.target)){
+          setOpen(false);
+        }
+      }
+      document.addEventListener("mousedown",handleClickOutside);
+      return()=>{
+        document.removeEventListener("mousedown",handleClickOutside);
+      }
+    },[])
+    
     const [user,setUser]=useState(null);
     useEffect(()=>{
      const token=localStorage.getItem("token");
@@ -29,9 +52,19 @@ function Nav1(){
           <div className="search-box"><input placeholder="جستجو محصول..." className="search-bar" type="search"></input><FaSearch style={{fontSize:"20px"}} /></div>
 
           {user ? (
-            <div className="" style={{display:"flex",alignItems:"center",gap:"10px",width:"15vw",whiteSpace:"nowrap",margin:"3vw"}}>
-              <img src={`http://localhost:5000/avatars/${user.avatar}`} alt="profile" style={{width:"3.3vw",height:"3.3vw",borderRadius:"50%"}} />
+            <div className="user-menu-wrapper" ref={menuRef}
+            onClick={()=>setOpen(!open)} style={{display:"flex",alignItems:"center",gap:"10px",width:"15vw",whiteSpace:"nowrap",margin:"3vw"}}>
+              <div className="user-avatar">
+                <img src={`http://localhost:5000/avatars/${user.avatar}`} alt="profile" style={{width:"3.3vw",height:"3.3vw",borderRadius:"50%"}} />
               <span  >{user.name}</span>
+              </div>
+              
+              {open && (
+                <div className="user-dropdown">
+                  <button onClick={()=>navigate('/editProfile')}>ویرایش پروفایل</button>
+                  <button onClick={handleLogout}>خروج</button>
+                </div>
+              )}
             </div>
           ):(
             <Link className="btn-login" to="/login">ثبت نام / ورود</Link>

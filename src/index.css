@@ -11,6 +11,45 @@
   font-family: Vazir ;
   scroll-behavior: smooth;
 }
+
+
+/* usermenu */
+
+.user-menu-wrapper{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  direction: rtl;
+}
+.user-avatar{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.user-dropdown{
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 100;
+}
+.user-dropdown button{
+  display: block;
+  background: none;
+  border: none;
+  color: #333;
+  padding: 8px;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+}
+.user-dropdown button:hover{
+  background-color:#f0f0f0;
+}
 /* slideshowMain */
 
 .scontainer{
