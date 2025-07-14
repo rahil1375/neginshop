@@ -61,7 +61,7 @@ function Nav1(){
               
               {open && (
                 <div className="user-dropdown">
-                  <button onClick={()=>navigate('/editProfile')}>ویرایش پروفایل</button>
+                  <button onClick={()=>navigate('dashboard/manageProfile')}>مدیریت حساب</button>
                   <button onClick={handleLogout}>خروج</button>
                 </div>
               )}

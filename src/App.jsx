@@ -6,16 +6,19 @@ import Nav1 from "./Components/nav1"
 import Nav2s from "./Components/Nav2S"
 import Newest from "./Components/Newest"
 import Products from "./Components/Products"
-// import Slideshow from "./Components/Slideshow"
 import SlideshowMain from "./Components/SlideshowMain"
 import { BrowserRouter } from 'react-router-dom'
 import LogSignPage from "./Components/LogSignPage"
 import AdminPanel from "./Components/AdminPanel"
 import Dashboard from "./Components/Dashboard"
 import EditProfile from "./Components/EditProfile"
-import { div } from "framer-motion/client"
+import MyOrders from "./Components/MyOrders"
+import ManageProfile from "./Components/ManageProfile"
+import Favorites from "./Components/Favorites"
+import Markups from "./Components/Markups"
+import Views from "./Components/Views"
+import Tickets from "./Components/Tickets"
 function App() {
-
   return (
     <BrowserRouter> 
     <div>
@@ -28,16 +31,21 @@ function App() {
     <AmazingOffer/>
     <Newest/></div>}/>
     <Route path="/login" element={<LogSignPage/>}/>
-    <Route path="/dashboard" element={<Dashboard/>}/>
+    <Route path="/dashboard" element={<Dashboard/>}>
+      <Route path="manageProfile" element={<ManageProfile/>}/>
+      <Route path="editProfile" element={<EditProfile/>}/>
+      <Route path="myOrders" element={<MyOrders/>}/>
+      <Route path="favorites" element={<Favorites/>}/>
+      <Route path="markups" element={<Markups/>}/>
+       <Route path="views" element={<Views/>}/>
+        <Route path="tickets" element={<Tickets/>}/>
+    </Route>
     <Route path="/admin" element={<AdminPanel/>}/>
-    <Route path="/editProfile" element={<div><Dashboard/><EditProfile/></div>}/>
     
     </Routes>
      <Footer/>
-      
     </div>
     </BrowserRouter>
   )
 }
-
 export default App
