@@ -8,7 +8,7 @@ function Nav1(){
 
     const[open,setOpen]=useState(false);
     const navigate=useNavigate();
-    const userr=JSON.parse(localStorage.getItem("user"));
+    // const userr=JSON.parse(localStorage.getItem("user"));
     const menuRef=useRef();
     const handleLogout=()=>{
       localStorage.removeItem("token");
@@ -40,7 +40,7 @@ function Nav1(){
 
     return(
     
-        <div className="nav1" style={{position:"sticky",top:"0px",zIndex:"1000"}}>
+        <div className="nav1" style={{position:"sticky",top:"0px",zIndex:"1004"}}>
         <div className="logoContainer">
           <a className="navbar-brand" href="#" style={{marginRight:"6vw",cursor:"pointer"}}>
             <img className="logoimg" src={imgl} alt="logo"/>

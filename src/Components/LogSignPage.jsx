@@ -42,7 +42,7 @@ function LogSignPage(){
                 if (userData.role === "admin" || userData.isAdmin){
                     // navigate('/admin');
                     localStorage.setItem("user",JSON.stringify(userData));
-                    window.location.href="/admin";
+                    window.location.href="/dashboard";
                 }else{
                     // navigate('/dashboard');
                     localStorage.setItem("user",JSON.stringify(userData));

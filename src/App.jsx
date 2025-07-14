@@ -12,6 +12,8 @@ import { BrowserRouter } from 'react-router-dom'
 import LogSignPage from "./Components/LogSignPage"
 import AdminPanel from "./Components/AdminPanel"
 import Dashboard from "./Components/Dashboard"
+import EditProfile from "./Components/EditProfile"
+import { div } from "framer-motion/client"
 function App() {
 
   return (
@@ -28,6 +30,8 @@ function App() {
     <Route path="/login" element={<LogSignPage/>}/>
     <Route path="/dashboard" element={<Dashboard/>}/>
     <Route path="/admin" element={<AdminPanel/>}/>
+    <Route path="/editProfile" element={<div><Dashboard/><EditProfile/></div>}/>
+    
     </Routes>
      <Footer/>
       
