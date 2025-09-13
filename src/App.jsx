@@ -18,6 +18,8 @@ import Favorites from "./Components/Favorites"
 import Markups from "./Components/Markups"
 import Views from "./Components/Views"
 import Tickets from "./Components/Tickets"
+import Support from "./Components/Support"
+import Seller from "./Components/Seller"
 function App() {
   return (
     <BrowserRouter> 
@@ -41,7 +43,8 @@ function App() {
         <Route path="tickets" element={<Tickets/>}/>
     </Route>
     <Route path="/admin" element={<AdminPanel/>}/>
-    
+    <Route path="/support" element={<Support/>}/>
+    <Route path="/seller" element={<Seller/>}/>
     </Routes>
      <Footer/>
     </div>
