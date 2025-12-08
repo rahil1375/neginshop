@@ -1,3 +1,4 @@
+// src/components/Dashboard.jsx
 import React,{useEffect,useState} from "react";
 import imgdash from "../images/dash.jpg"
 import { Link } from "react-router-dom";

@@ -1,3 +1,4 @@
+// src/components/Favorites.jsx
 import React from "react";
 function Favorites(){
     return(

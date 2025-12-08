@@ -1,3 +1,4 @@
+// src/components/Seller.jsx
 import React from "react";
 function Seller(){
     return(

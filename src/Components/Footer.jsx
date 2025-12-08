@@ -1,3 +1,4 @@
+// src/components/Footer.jsx
 import React from "react";
 import { BsBoxSeam } from "react-icons/bs";
 import { HiOutlineShieldCheck } from "react-icons/hi2";

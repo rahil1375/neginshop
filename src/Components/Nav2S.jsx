@@ -1,3 +1,4 @@
+// src/components/Nav2s.jsx
 import React from "react";
 import imgl from '../assets/logo2.png';
 import { BsCart3 } from "react-icons/bs";

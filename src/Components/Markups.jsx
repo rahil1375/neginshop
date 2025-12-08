@@ -1,3 +1,4 @@
+// src/components/Markups.jsx
 import React from "react";
 function Markups(){
     return(

@@ -1,3 +1,4 @@
+// src/components/ManageProfile.jsx
 import React from "react";
 function ManageProfile(){
     return(

@@ -1,3 +1,4 @@
+// src/components/SlideshowMain.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import image1 from "../images/header-1.jpg"

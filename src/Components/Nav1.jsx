@@ -1,3 +1,4 @@
+// src/components/Nav1.jsx
 import React, { useEffect, useState ,useRef} from "react";
 import { FaSearch } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";

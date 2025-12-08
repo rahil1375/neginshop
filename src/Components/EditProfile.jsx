@@ -1,3 +1,4 @@
+// src/components/EditProfile.jsx
 import React, { useEffect, useState, useRef } from "react";
 import { buildAvatarUrl } from "../utils/avatar";
 import { FaRegEyeSlash } from "react-icons/fa6";

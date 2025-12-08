@@ -1,3 +1,4 @@
+// App.jsx
 import { Routes,Route } from "react-router-dom"
 import AmazingOffer from "./Components/AmazingOffer"
 import Categories from "./Components/Categories"

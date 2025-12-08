@@ -1,3 +1,4 @@
+// src/components/Tickets.jsx
 import React from "react";
 function Tickets(){
     return(

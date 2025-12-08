@@ -1,3 +1,4 @@
+// src/components/Views.jsx
 import React from "react";
 function Views(){
     return(

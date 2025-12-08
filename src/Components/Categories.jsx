@@ -1,3 +1,4 @@
+// src/components/Categories.jsx
 import React from 'react';
 
 function Categories() {
