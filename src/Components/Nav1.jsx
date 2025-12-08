@@ -4,7 +4,15 @@ import { BsCart3 } from "react-icons/bs";
 import imgl from '../assets/logo2.png'
 import { data, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {buildAvatarUrl} from "../utils/avatar"
 function Nav1(){
+  //   const buildAvatarUrl = (avatar) => {
+  //   const base = "http://localhost:5000";
+  //   if (!avatar || avatar === "avatar" || avatar === "undefined" || avatar === "null") {return `${base}/avatars/default.png`;}
+  //   if (avatar.startsWith("http")) return avatar;
+  //   if (avatar.startsWith("/")) return `${base}${avatar}`;
+  //   return `${base}/avatars/${avatar}`;
+  // };
 
     const[open,setOpen]=useState(false);
     const navigate=useNavigate();
@@ -26,8 +34,12 @@ function Nav1(){
       return()=>{
         document.removeEventListener("mousedown",handleClickOutside);
       }
+
+    
     },[])
     
+   
+
     const [user,setUser]=useState(null);
     useEffect(()=>{
      const token=localStorage.getItem("token");
@@ -38,6 +50,14 @@ function Nav1(){
       .catch((err)=>console.log(err));}
     },[]);
 
+     useEffect(()=>{
+        const handleUserUpdate=()=>{
+        const updatedUser=JSON.parse(localStorage.getItem("user") || "{}");
+        setUser(updatedUser);
+      };
+      window.addEventListener("userUpdated",handleUserUpdate);
+      return()=>window.removeEventListener("userUpdated",handleUserUpdate);
+    },[])
     return(
     
         <div className="nav1" style={{position:"sticky",top:"0px",zIndex:"1004"}}>
@@ -55,7 +75,7 @@ function Nav1(){
             <div className="user-menu-wrapper" ref={menuRef}
             onClick={()=>setOpen(!open)} style={{display:"flex",alignItems:"center",gap:"10px",width:"15vw",whiteSpace:"nowrap",margin:"3vw"}}>
               <div className="user-avatar">
-                <img src={`http://localhost:5000/avatars/${user.avatar}`} alt="profile" style={{width:"3.3vw",height:"3.3vw",borderRadius:"50%"}} />
+                <img src={buildAvatarUrl(user?.avatar)} alt="avatar" style={{width:"3.3vw",height:"3.3vw",borderRadius:"50%"}} />
               <span  >{user.name}</span>
               </div>
               
