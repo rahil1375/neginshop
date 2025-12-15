@@ -21,6 +21,7 @@ import Views from "./Components/Views"
 import Tickets from "./Components/Tickets"
 import Support from "./Components/Support"
 import Seller from "./Components/Seller"
+import ProductDetails from "./Components/ProductDetails"
 function App() {
   return (
     <BrowserRouter> 
@@ -46,6 +47,7 @@ function App() {
     <Route path="/admin" element={<AdminPanel/>}/>
     <Route path="/support" element={<Support/>}/>
     <Route path="/seller" element={<Seller/>}/>
+    <Route path="/product/:id" element={<ProductDetails/>}/>
     </Routes>
      <Footer/>
     </div>

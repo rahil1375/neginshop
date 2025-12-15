@@ -36,7 +36,7 @@ function LogSignPage(){
                 // window.location.href= data.isAdmin ? "/admin" : "/dashboard";
                 //دریافت اطلاعات کاربر
                 const userRes = await fetch('http://localhost:5000/api/auth/me',{
-                    headers: { 'Authorization':`Bearer ${data.token}`}
+                    headers: { Authorization:`Bearer ${data.token}`,}
                 });
                 const userData=await userRes.json();
 
